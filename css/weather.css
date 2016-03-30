@@ -1,0 +1,44 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+.weather {
+	font-family: Arial;
+	font-size: medium;
+	width: 280px;
+	border: 1px solid black;
+	background: white;
+	margin: 10px;
+	display: inline-block;
+	padding: 10px;
+}
+.day-title {
+	background: #ccc;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.now-weather {
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+.now-image {
+	float: left;
+	display: inline-block;
+	margin-top: 8px;
+}
+.now-text {
+	width: calc(100% - 48px);
+	float: left;
+	display: inline-block;
+	margin-top: 8px;
+	text-align: center;
+}
+.day-part {
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+}

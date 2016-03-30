@@ -12,7 +12,7 @@
 	$SYSTEM['postfix'] = 'S-LTS';  // system assembly code
 	
 	$SYSTEM['debug']   =  false;   // system debugging On/Off
-	$SYSTEM['extlib']  =  true;    // load libraries from the external point
+	$SYSTEM['extlib']  =  true;   // load libraries from the external point
 	
 	$PATH_TO['doit'] = '../mod/';  // path to DOIT directory
 	

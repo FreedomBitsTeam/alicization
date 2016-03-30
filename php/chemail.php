@@ -18,7 +18,7 @@
     //==========================================================================
     $email = rawurldecode($_GET['cmd']);
     $email = preg_replace("/[^0-9A-ZА-ЯЁ@.\s{2,}]+/ui","",(string)$email);
-    $sql = "SELECT * FROM emails WHERE email='".$email."' LIMIT 1";
+    $sql = $QUERY[3][1] . $email . $QUERY[3][2] ;
     $res = $db->query($sql);
     if ($res) {
     	$row = mysqli_fetch_array($res);
@@ -26,14 +26,11 @@
     		@session_start();
     		$_SESSION['name'] = $row['name'];
     		$_SESSION['email'] = $row['email'];
-    		echo '<br>Ваше имя:<br><p id="usernameget">'.$row['name'].'</p><br><br><br>';
-    		echo '<input id="sucstep" class="bigbtn" type="button" value="Go" OnClick="ClickNext(this);">';
+    		echo '<br>Ваше имя:<br><p id="usernameget">'.$row['name'].'</p>';
+    		echo '<br><br><br>';
+    		require('src/beta-button.html');
     	} else {
-    		printf('<br><br>Введи свое имя:<br><br>
-								<input id="username" class="bigtxt" type="text" placeholder="Царь Петр I" style="text-align: center;">
-								<br><span id="error2" class="tred"></span><br>
-								<input id="nextstep3" class="bigbtn" type="button" value="Далее" OnClick="ClickNext(this);">
-							');
+    		require('src/beta-step2.html');
     	}
     }
     //==========================================================================

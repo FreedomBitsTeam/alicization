@@ -1,5 +1,9 @@
 ﻿var page = 1;
 
+function ElemRemove() {
+	$("#wrem").html('');
+}
+
 function NextPage() {
 	$("#page"+page.toString()).css("display", "none");
 	page++;

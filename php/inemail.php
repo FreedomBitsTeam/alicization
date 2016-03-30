@@ -21,13 +21,13 @@
     $uname = rawurldecode($_GET['uname']);
     $email = preg_replace("/[^0-9A-ZА-ЯЁ@.\s{2,}]+/ui","",(string)$email);
     $uname = preg_replace("/[^0-9A-ZА-ЯЁ@.()[]\s{2,}]+/ui","",(string)$uname);
-    $sql = "INSERT INTO emails (`email`, `name`, `points`) VALUES ('".$email."', '".$uname."', '0')";
+    $sql = $QUERY[4][1] . $email . $QUERY[4][2] . $uname . $QUERY[4][3];
     $res = $db->query($sql);
     if ($res) {
     	$_SESSION['name'] = $uname;
     	$_SESSION['email'] = $email;
     	echo '<br>Вы успешно добавлены, '.$uname.'<br><br>';
-    	echo '<input id="sucstep" class="bigbtn" type="button" value="Go" OnClick="ClickNext(this);">';
+    	require('src/beta-button.html');
     } else {
     	echo '<p class="tred">'.$MESSAGE['error'].'</p>';
     }

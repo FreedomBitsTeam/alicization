@@ -16,12 +16,17 @@
     //==========================================================================
     // Первая серия запросов 																			 [анализируем]
     //==========================================================================
-    $_GET['cmd'] = rawurldecode($_GET['cmd']);
-    $words  = explode(" ", mb_convert_case(trim(preg_replace("/[^0-9A-ZА-ЯЁ\s{2,}]+/ui"," ",(string)$_GET['cmd'])), MB_CASE_LOWER, "utf8"));
+    $_GET['cmd'] = (string)(rawurldecode($_GET['cmd']));
+    //--------------------------------------------------------------------------
+    // Преобразуем вводимую строку, удаляем опасные символы
+    //--------------------------------------------------------------------------
+    $words = explode(" ", mb_convert_case(trim(preg_replace(
+           "/[^0-9A-ZА-ЯЁ\s{2,}]+/ui"," ",$_GET['cmd'])),MB_CASE_LOWER,"utf8"));
+    //--------------------------------------------------------------------------
     $allcmd = "";
     $allnum = "";
     for ($i = 0; $i < count($words); $i++) {
-    	$sql = "SELECT * FROM (SELECT word, type, LEVENSHTEIN_RATIO(word, '" . $words[$i] . "') AS KOL FROM keywords) a WHERE (ABS(ASCII(SUBSTRING(a.word, 1, 1))-ASCII(SUBSTRING('" . $words[$i] . "', 1, 1))) < 80) AND a.KOL >= 40 ORDER BY a.KOL DESC LIMIT 1";
+    	$sql = $QUERY[1][1] .$words[$i]. $QUERY[1][2] .$words[$i]. $QUERY[1][3];
     	$res = $db->query($sql);
     	$row = mysqli_fetch_array($res);
     	$allcmd .= $row['word'].' ';
@@ -30,7 +35,7 @@
     //==========================================================================
     // Вторая серия запросов																					[отвечаем]
     //==========================================================================
-    $sql = "SELECT * FROM (SELECT id, keywords, doit, answer, SIMILARITY_RATIO('" . $allnum . "', keywords) AS KOL FROM commands) a WHERE a.KOL >= 40 ORDER BY a.KOL DESC LIMIT 1";
+    $sql = $QUERY[2][1] . $allnum . $QUERY[2][2];
     $res = $db->query($sql);
     $row = mysqli_fetch_array($res);
     $answer = $row['answer'];
@@ -47,12 +52,16 @@
     }
     $notion = "";
     if ($SYSTEM['debug']) {	
-    	$notion = $MESSAGE['debug'] . ' "' . substr($allcmd, 0, strlen($allcmd)-1) . '"<br>'; 
+    	$notion = $MESSAGE['debug'];
+    	$notion .= ' "' . substr($allcmd, 0, strlen($allcmd)-1) . '"<br>'; 
     }
+    echo '<br><br><br><div class="sys msg">' . $notion;
     if (strlen($row['answer']) > 2)
-    	echo '<br><br><br><div class="sys msg">' . $notion . $answer . '<div class="msg-left"></div></div><br><br><br><br>';
+    	echo $answer;
     else
-    	echo '<br><br><br><div class="sys msg">' . $notion . $MESSAGE['answer'] . '<div class="msg-left"></div></div><br><br><br><br>';
+    	echo $MESSAGE['answer'] . $MESSAGE['typein'];
+    echo '<div class="msg-left"></div></div><br><br><br><br>';
+    //==========================================================================
 	}
 ?>
 
