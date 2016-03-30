@@ -1,0 +1,211 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow-x: hidden;
+	//overflow-y: hidden;
+}
+.logo {
+	width: 141px;
+	height: 141px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-image: url(../img/u.png);
+	background-size: cover;
+	background-position: center;
+}	
+@media screen and (min-height: 1024px) {
+	.logo {
+		width: 25vw;
+		height: 25vw;
+		right: -4px;
+	}	
+}
+.container {
+	height: 80vh;
+	margin-left: 6vw;
+	margin-right: 6vw;
+	margin-top: 10vh;
+}
+.alice {
+	display: inline-block;
+	float: left;
+	width: 35vw;
+	height: 100%;
+	background-image: url(../img/alice.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	border-radius: 50px;
+}
+.chat {
+	display: inline-block;
+	float: right;
+	width: 50vw;
+	height: 100%;
+}
+.window {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	font-family: Comic Sans MS;
+}
+.label {
+	width: calc(100% - 20px);
+	height: 40px;
+	border-radius: 20px 20px 0 0;
+	background-color: #0076BA;
+	border: 2px solid #0076BA;
+	padding: 10px 0 0 20px;
+	font-size: 25px;
+	color: white;
+}
+.content {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 40px);
+	border-radius: 0 0 20px 20px;
+	background-color: #fff;
+	border: 2px solid #0076BA;
+}
+.messages {
+	width: 96%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 2%;
+	margin-bottom: calc(1% + 60px);
+	overflow-y: scroll;
+	font-size: 25px;
+}
+.data-input {
+	width: 96%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 2%;
+}
+.data-input input {
+	padding: 5px;
+	border: 2px dashed #0076BA;
+	border-radius: 10px;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	color: #0076BA;
+}
+.inp1 {
+	float: left;
+	width: 70%;
+}
+.inp2 {
+	float: right;
+	width: 25%;
+	background: #fff;
+}
+.inp2:hover {
+	background: #0076BA;
+	color: #fff;
+}
+.msg {
+	padding: 8px 10px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #0076BA;
+	background-color: #ccc;
+	margin-right: 2%;
+	margin: 20px;
+	max-width: 80%;
+	min-width: 20%;
+}
+.msg-left {
+	position: absolute;
+	margin-top: 2px;
+	margin-left: 5px;
+	width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 40px solid transparent;       
+  border-top: 20px solid #8dd;
+}
+.msg-right {
+	position: absolute;
+	right: 30px;
+	margin-top: 2px;
+	margin-left: 5px;
+	width: 0; 
+  height: 0; 
+  border-left: 40px solid transparent;
+  border-right: 10px solid transparent;       
+  border-top: 20px solid #ccc;
+}
+.my {
+	float: right;
+	background-color: #ccc;
+}
+.sys {
+	float: left;
+	margin-bottom: 20px;
+	background-color: #8dd
+}
+@media screen and (max-width: 980px) {
+	.container {
+		height: 75vh;
+		margin: 0;
+		margin-top: 25vh;
+	}
+	.alice {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		width: 30vh;
+		height: 30vh;
+		border: 5px solid #0076BA;
+		border-radius: 50%;
+	}
+	.chat {
+		position: absolute;
+		width: 100%;
+		height: 75vh;
+	}
+	.label {
+		border-radius: 0;
+		font-size: 45px;
+		height: 70px;
+	}
+	.content {
+		max-height: calc(75vh - 100px);
+		border: 0;
+	}
+	.messages {
+		margin-bottom: calc(1% + 100px);
+		font-size: 30px;
+	}
+	.data-input {
+		padding: 0;
+	}
+	.data-input input {
+		border: 4px dashed #0076BA;
+		padding: 10px;
+		font-size: 48px;
+	}
+	.msg {
+		font-size: 45px;
+	}
+	.msg-left {
+ 		border-left: 20px solid transparent;
+  	border-right: 60px solid transparent;       
+  	border-top: 30px solid #8dd;
+	}
+	.msg-right {
+		right: 30px;
+  	border-left: 60px solid transparent;
+  	border-right: 20px solid transparent;       
+  	border-top: 30px solid #ccc;
+	}
+}

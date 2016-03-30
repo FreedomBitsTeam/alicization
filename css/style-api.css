@@ -1,0 +1,84 @@
+﻿* { 
+	margin:0;
+	padding:0; 
+}
+body { 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.container { 
+	margin: 0 auto; 
+	width: 530px; 
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+a { 
+	color:#DF3D82; 
+	text-decoration: none; 
+}
+a:hover { 
+	color:#DF3D82; 
+	text-decoration: underline; 
+}
+ul.update { 
+	list-style: none;
+	font-size: 1.1em; 
+	margin-top: 10px 
+}
+ul.update li{ 
+	padding: 5px; 
+	border-bottom: #dedede solid 1px; 
+	text-align: left;
+}
+ul.update li:first-child { 
+	border-top: #dedede solid 1px; 
+	text-align: left; 
+	padding: 5px;
+}
+#string { 
+	text-align: left; 
+	display: none; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 16px; 
+	color: #000; 
+}
+.command { 
+	font-weight: bold; 
+	color: #000000; 
+}
+.field { 
+	padding: 4px; 
+	border: solid 1px #666666; 
+	width: 400px; 
+	height: 30px; 
+	font-size: 18px;
+	border-radius: 5px;
+}
+.send { 
+	border: #000000 solid 1px; 
+	padding: 6px; 
+	color: #000; 
+	font-weight: bold; 
+	font-size: 16px;
+	border-radius: 6px;
+}
+.word { 
+	font-weight: bold; 
+	font-style: italic;  
+}
+.id {
+	width: 100px; 
+	display: inline-block;
+}
+.red {
+	color: #ff0000;
+}
+.green {
+	color: #00aa00;
+}
+.blue {
+	color: #0000cc;
+}
+.endres {
+	font-size: 20px;
+	color: red;
+}
