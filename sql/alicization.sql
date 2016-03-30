@@ -2,9 +2,9 @@
 -- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Фев 12 2016 г., 21:50
--- Версия сервера: 5.6.16-log
+-- Хост: 127.0.0.1
+-- Время создания: Фев 12 2016 г., 21:51
+-- Версия сервера: 5.6.16
 -- Версия PHP: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `commands` (
   `doit` varchar(255) COLLATE utf8_bin NOT NULL,
   `answer` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `commands`
@@ -150,10 +150,11 @@ CREATE TABLE IF NOT EXISTS `commands` (
 INSERT INTO `commands` (`id`, `keywords`, `doit`, `answer`) VALUES
 (1, '0;2;38;', 'null', 'Я - Алиса, единая информационная школьная система, твой виртуальный помощник :)'),
 (2, '0;4;88;', 'null', 'Все хорошо, сервер исправен'),
-(3, '0;4;89;', 'null', 'Мой последний релиз: 0.3.1'),
+(3, '0;4;89;', 'version.php', 'Моя последняя версия:'),
 (4, '1;2;', 'null', 'Привет, пользователь! Чем могу помочь?'),
 (5, '0;2;4;', 'null', 'Все хорошо! Сервер в полном порядке!'),
-(6, '16;75;', 'null', 'У меня по-прежнему нет данных для вывода :(');
+(6, '16;75;', 'schedule.php', 'Ваше расписание:'),
+(7, '700;', 'math.php', 'Ответ:');
 
 -- --------------------------------------------------------
 
@@ -167,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `keywords` (
   `type` int(11) NOT NULL,
   `word` varchar(63) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=113 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=115 ;
 
 --
 -- Дамп данных таблицы `keywords`
@@ -177,8 +178,8 @@ INSERT INTO `keywords` (`id`, `type`, `word`) VALUES
 (1, 1, 'hello'),
 (2, 1, 'hi'),
 (3, 2, 'Alice'),
-(4, 5, 'cool'),
-(5, 1, 'test'),
+(4, 700, 'вычисли'),
+(5, 89, 'новенькое'),
 (6, 2, 'система'),
 (7, 2, 'дорогая'),
 (8, 4, 'что'),
@@ -285,7 +286,9 @@ INSERT INTO `keywords` (`id`, `type`, `word`) VALUES
 (109, 75, 'Уточни'),
 (110, 75, 'Покажи'),
 (111, 75, 'Скажи'),
-(112, 75, 'Выведи');
+(112, 75, 'Выведи'),
+(113, 700, 'Реши'),
+(114, 700, 'solve');
 
 -- --------------------------------------------------------
 

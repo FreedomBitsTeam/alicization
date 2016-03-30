@@ -1,10 +1,11 @@
 ﻿<?php
 	if (isset($_GET['cmd'])) {
     include('packcage.php');
-    $db = new mysqli("localhost", "admin", "qwerty", "alicization");
+    $db = ConnectDB();
     $db->select_db("alicization");
     $db->query("SET NAMES 'utf8'");
-    $words = explode(" ", mb_convert_case(mb_ereg_replace("/[^a-zA-ZА-Яа-я0-9\s]/", "", $_GET['cmd']), MB_CASE_LOWER, "utf8"));
+    $_GET['cmd'] = rawurldecode($_GET['cmd']);
+    $words  = explode(" ", mb_convert_case(trim(preg_replace("/[^0-9A-ZА-ЯЁ\s{2,}]+/ui"," ",(string)$_GET['cmd'])), MB_CASE_LOWER, "utf8"));
     $allcmd = "";
     $allnum = "";
     for ($i = 0; $i < count($words); $i++) {

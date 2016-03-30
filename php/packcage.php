@@ -1,19 +1,20 @@
 ﻿<?php
 	//--------------------------------------------------------
-	// GLOBAL CONSTANTS
+	if (!include('../etc/config.php')) {
+		$DB["host"] = "localhost";
+		$DB["user"] = "admin";
+		$DB["pswd"] = "qwerty";
+		$DB["dbnm"] = "alicization";
+	}
 	//--------------------------------------------------------
-	$STD_HOST = "localhost";
-	$STD_USER = "admin";
-	$STD_PASS = "qwerty";
-	$STD_DBNM = "alicization";
-	//--------------------------------------------------------
-	function connectDB()
+	function ConnectDB()
 	{
-  	$mysqli = new mysqli($GLOBALS['STD_HOST'], 
-  											 $GLOBALS['STD_USER'], 
-  											 $GLOBALS['STD_PASS'], 
-  											 $GLOBALS['STD_DBNM']);
-  	return $mysqli;
-  }
+		global $DB;
+		$mysqli = new mysqli($DB["host"], 
+												 $DB["user"], 
+												 $DB["pswd"], 
+												 $DB["dbnm"] );
+		return $mysqli;
+	}
 	//--------------------------------------------------------
 ?>

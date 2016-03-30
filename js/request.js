@@ -4,7 +4,7 @@
 		
 		var input = $("#data");					// где берем даные
 		var command = input.val(); 			// получаем то, что написал пользователь
-		var request = 'cmd=' + command; // формируем строку запроса	
+		var request = 'cmd=' + encodeURIComponent(command); // формируем строку запроса	
 		var container = $('.messages');	// где лежат сообщения
 		var results = $("#results");		// куда положим результат
 

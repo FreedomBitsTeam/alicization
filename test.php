@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Alpha v0.1.3</title>
+		<title>Test</title>
 		<link rel="stylesheet" type="text/css" href="css/style-api.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/request-api.js"></script>
+		<script type="text/javascript" src="js/request-test.js"></script>
 </head>
 <body>
 	

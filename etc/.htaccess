@@ -1,0 +1,4 @@
+﻿AuthType Basic
+AuthName "closed access"
+AuthUserfile "../htdocs/alicization/etc/.htpasswd"
+Require valid-user
