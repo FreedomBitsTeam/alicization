@@ -18,7 +18,7 @@
     // Ищем в базе полученный e-mail																		 [Поиск]
     //==========================================================================
     $email = rawurldecode($_GET['cmd']);
-    $email = preg_replace("/[^0-9A-Z@.\s{2,}]+/ui","",(string)$email);
+    $email = preg_replace("/[^0-9A-ZА-ЯЁ@.\s{2,}]+/ui","",(string)$email);
     $sql = "SELECT * FROM emails WHERE email='".$email."' LIMIT 1";
     $res = $db->query($sql);
     if ($res) {
@@ -32,7 +32,7 @@
     	} else {
     		printf('<br><br>Введи свое имя:<br><br>
 								<input id="username" class="bigtxt" type="text" placeholder="Царь Петр I" style="text-align: center;">
-								<br><br>
+								<br><span id="error2" class="tred"></span><br>
 								<input id="nextstep3" class="bigbtn" type="button" value="Далее" OnClick="ClickNext(this);">
 							');
     	}

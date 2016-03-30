@@ -3,7 +3,7 @@
 if (!isset($_SESSION['name'])) {
 	printf('
 		<div id="overlay">
-			<div class="showmessage">
+			<div class="showmessage" id="betain">
 				<div class="window">
 					<div class="label">Бета-тест</div>
 					<div class="content">
@@ -18,10 +18,12 @@ if (!isset($_SESSION['name'])) {
 						
 						<div class="step" id="st1">
 							<br>Пожалуйста, введи свою эл. почту<br>
-							<br>Если ты уже принимал участие в Бета-тесте, то ты сразу сможешь продолжить тестирование<br>
-							<br>И не переживай, мы не будем спамить<br><br>
+							<br>Если ты уже принимал участие в Бета-тесте, то сразу сможешь продолжить тестирование<br>
+							<br><p class="torange">Не хочешь указывать свою почту - придумай какой-то логин</p>
+							<br>
 							<input id="email" class="bigtxt" type="text" placeholder="example@example.com">
 							<input id="nextstep2" class="bigbtn" type="button" value="Далее">
+							<span id="error1" class="tred"></span>
 						</div>
 						
 						<div class="step" id="st2">

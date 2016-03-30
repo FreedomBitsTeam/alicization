@@ -10,26 +10,15 @@
 		<link rel="stylesheet" type="text/css" href="css/colors.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-		<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/beta.js"></script>
-		<!--<script type="text/javascript" src="js/drag-and-drop.js"></script>-->
+		<script type="text/javascript" src="js/drag-and-drop.js"></script>
 		<script type="text/javascript" src="js/interface.js"></script>
 		<script type="text/javascript" src="js/request.js"></script>
 	</head>	
 	<body>
 		
-		<!--
-		<div class="window" id="drag1">
-			<p class="label tgreen">Обучение</p>
-			<div class="content" style="">
-				<p class="tred">Привет, тестировщик!</p>
-				<br>
-				<p class="torange">Как тебе панелька? А ее можно перетаскивать!</p>
-				<br>
-				<p class="tblue">Попробуй перетащить ее за заголовок</p>
-			</div>
- 		</div>
- 		-->
+		<?php require_once("php/quest.php"); ?>
 		
 		<div class="logo"></div>
 		
@@ -39,7 +28,7 @@
 			
 			<div class="chat">
 				<div class="window">
-					<div class="label">Чат с Алисой</div>
+					<div class="label">Чат с Алисой<label id="helpb" onClick="OpenEdu();">[?]</label></div>
 					<div class="content">
 						<div id="messages" class="messages">
 							

@@ -1,10 +1,9 @@
 ﻿var stepnum = 0;
 
-function ClickNext(obj) {
-	$("#st"+stepnum.toString()).css("display", "none");
-	stepnum++;	
+function ClickNext(obj) {	
 	if ($(obj).attr('id') == "nextstep2") {
 		var command = $("#email").val();
+		if (command == "") { $("#error1").text("Хммм, поле же пустое!"); return 0; }
 		var request = 'cmd=' + encodeURIComponent(command);
 		var results = $("#st2");
 		$.ajax({
@@ -22,6 +21,7 @@ function ClickNext(obj) {
 	if ($(obj).attr('id') == "nextstep3") {
 		var email = $("#email").val();
 		var uname = $("#username").val();
+		if (email == "" || uname == "") { $("#error2").text("Хммм, поле же пустое!"); return 0; }
 		var request = 'email=' + encodeURIComponent(email) + '&uname=' + encodeURIComponent(uname);
 		var results = $("#st3");
 		$.ajax({
@@ -36,6 +36,8 @@ function ClickNext(obj) {
 			}
 		});
 	}
+	$("#st"+stepnum.toString()).css("display", "none");
+	stepnum++;
 	if ($(obj).attr('id') == "sucstep") {
 		$("#overlay").css("display", "none");
 	} else {

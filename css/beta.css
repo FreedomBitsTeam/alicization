@@ -68,12 +68,14 @@
 	top: 40%;
 	color: #70BF53;
 	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	font-family: Courier;
 }
 #drag1 .label {
 	border: 2px solid;
 	background: #14171A; 
 	border-color: #1D4F73;
 	border-radius: 15px 15px 0 0;
+	font-weight: bold;
 }
 #drag1 .content {
 	border: 2px solid;
@@ -85,6 +87,17 @@
 	overflow-x: hidden;
 	overflow-y: hidden;
 	height: calc(100% - 96px);
+}
+#closeb {
+	float: right;
+	cursor: pointer;
+}
+#helpb {
+	float: right;
+	cursor: pointer;
+	font-family: Courier;
+	font-weight: bold;
+	display: none;
 }
 @media screen and (max-width: 980px) {
 	.showmessage {
