@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="js/beta.js"></script>
 	</head>	
 	<body>
-		<?php require_once("php/quest.php"); ?>
+		
 		<div class="logo"></div>
 		<div class="container">
 			
@@ -58,6 +58,7 @@
 			</div>
 			
 		</div>
+		<?php if ($SYSTEM['quest']) require_once("php/quest.php"); ?>
 		<?php if ($SYSTEM['autht']) require_once("php/beta.php"); ?>
 		<div class="vinfo"><?php echo $SYSTEM['version']." on ".PHP_OS;?></div>
 	</body>

@@ -7,19 +7,27 @@
 	$DB['pswd'] = 'qwerty';        // password for user, default: qwerty
 	$DB['dbnm'] = 'alicization';   // database name, default: alicization
 	
+	//==========================================================================================================
+	
 	$SYSTEM['name']    = 'Beta';   // system version name
-	$SYSTEM['version'] = '0.5.6';  // system version number
-	$SYSTEM['postfix'] = 'S-LTS';  // system assembly code
+	$SYSTEM['version'] = '0.5.7';  // system version number
+	$SYSTEM['postfix'] = 'U-LTS';  // system assembly code
 	
 	$SYSTEM['autht']   = true;     // require login On/Off
+	$SYSTEM['quest']   = true;     // education book On/Off
+	$SYSTEM['tlink']   = true;     // test page button On/Off	
+	
 	$SYSTEM['debug']   = false;    // system debugging On/Off
 	$SYSTEM['extlib']  = true;     // load libraries from the external point On/Off
 	$SYSTEM['savedat'] = true;     // save users requests On/Off
+	$SYSTEM['autoedu'] = false;    // auto display education book On/Off
 	
-	$SYSTEM['metrika'] = true;     // yandex metrika On/Off
-	$SYSTEM['mwidget'] = true;     // yandex metrika widget On/Off
+	$SYSTEM['metrika'] = true;     // yandex metrika core On/Off
+	$SYSTEM['mwidget'] = false;    // yandex metrika widget On/Off
 	
-	$SYSTEM['v-chars']   = "/[^0-9A-ZА-ЯЁ,.()\"'\+\/\-!?\=]+/ui"; // valid chars for requests
+	//==========================================================================================================
+	
+	$SYSTEM['v-chars'] = "/[^0-9A-ZА-ЯЁ,.()\"'\+\/\-!?\=]+/ui"; // valid chars for requests
 	
 	//==========================================================================================================
 	
@@ -40,6 +48,7 @@
 	// Text messages from system
 	$MESSAGE['answer'] = 'К сожалению, я пока не знаю, что ответить на это, разработчики не научили меня :(';
 	$MESSAGE['typein'] = '<br><br>Введите "инфо" для отображения обучения.';
+	$MESSAGE['badreq'] = 'Некорректный запрос!<br>Запрос должен быть более 3 и менее 50 символов длиной.';
 	$MESSAGE['debug']  = 'Понято как:';
 	$MESSAGE['error']  = 'Произошел сбой! Пожалуйста, обновите страницу :(';
 	$MESSAGE['user']   = 'пользователь';
@@ -53,15 +62,16 @@
 	$QUERY[2][1] = "SELECT * FROM (SELECT id, keywords, doit, answer, SIMILARITY_RATIO('";
 	$QUERY[2][2] = "', keywords) AS KOL FROM commands) a WHERE a.KOL >= 40 ORDER BY a.KOL DESC LIMIT 1";
 	
-	// File: php/chemail.php
+	// Beta email check, file: php/chemail.php
 	$QUERY[3][1] = "SELECT * FROM emails WHERE email='";
 	$QUERY[3][2] = "' LIMIT 1";
 	
-	// File: php/inemail.php
+	// Beta email insert, file: php/inemail.php
 	$QUERY[4][1] = "INSERT INTO emails (`email`, `name`, `points`) VALUES ('";
 	$QUERY[4][2] = "', '";
 	$QUERY[4][3] = "', '0')";
 	
+	// Analyzer, telemetry, file: php/analyze.php
 	$QUERY[5][1] = "INSERT INTO `requests` (`id`, `user`, `text`, `num`, `com`, `success`, `system`, `time`) VALUES (NULL, '";
 	$QUERY[5][2] = "', CURRENT_TIMESTAMP)";
 	

@@ -6,7 +6,8 @@
 </head>
 <body>
 <?php
-	if (isset($_GET['cmd'])) {
+  if (!isset($_GET['cmd'])) $_GET['cmd'] = "N";
+	if (mb_strlen($_GET['cmd']) >= 3 && mb_strlen($_GET['cmd']) <= 50) {
     //==========================================================================
     include('packcage.php');
     //==========================================================================
@@ -21,7 +22,7 @@
     // Преобразуем вводимую строку, удаляем опасные символы
     //--------------------------------------------------------------------------
     $words = explode(" ", mb_convert_case(trim(preg_replace(
-             "/[^A-ZА-ЯЁ]+/ui","",$_GET['cmd'])),MB_CASE_LOWER,"utf8"));
+             "/[^A-ZА-ЯЁ ]+/ui","",$_GET['cmd'])),MB_CASE_LOWER,"utf8"));
     //--------------------------------------------------------------------------
     $allcmd = "";
     $allnum = "";
@@ -49,7 +50,7 @@
     //==========================================================================
     // Сохраняем телеметрию
     //==========================================================================
-    if ($SYSTEM['savedat'] && strlen($_GET['cmd']) > 3) {
+    if ($SYSTEM['savedat']) {
     	$userlogin = "anon"; $succ = 0;
     	if (isset($_SESSION['name'])) $userlogin = $_SESSION['name'];
     	if (strlen($row['answer']) > 2) $succ = 1;
@@ -78,6 +79,10 @@
     	echo $MESSAGE['answer'] . $MESSAGE['typein'];
     echo '<div class="msg-left"></div></div><br><br><br><br>';
     //==========================================================================
+	} else {
+		include('packcage.php');
+		echo '<br><br><br><div class="sys msg">' . $MESSAGE['badreq'];
+		echo '<div class="msg-left"></div></div><br><br><br><br>';
 	}
 ?>
 

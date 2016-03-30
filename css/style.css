@@ -45,10 +45,10 @@ body {
 	float: left;
 	width: 35vw;
 	height: 100%;
-	background-image: url(../img/alice.jpg);
+	background-image: url(../img/alice-2.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top;
+	background-size: 85%;
+	background-position: center, 10%;
 	border-radius: 50px;
 }
 .chat {
@@ -133,6 +133,7 @@ body {
 	margin: 20px;
 	max-width: 80%;
 	min-width: 20%;
+	word-wrap: break-word;
 }
 .msg-left {
 	position: absolute;
@@ -204,6 +205,7 @@ body {
 		height: 30vh;
 		border: 5px solid #0076BA;
 		border-radius: 50%;
+		background-position: top;
 	}
 	.chat {
 		position: absolute;

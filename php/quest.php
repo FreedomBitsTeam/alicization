@@ -1,10 +1,12 @@
 ﻿<?php
 
 	$username = "тестировщик";
+	$display  = "display: none;";
+	if ($SYSTEM['autoedu']) $display = "display: block;";
 	if (isset($_COOKIE['name'])) $username = $_COOKIE['name'];
 	if (isset($_SESSION['name'])) $username = $_SESSION['name'];
 	printf('
-		<div class="window" id="drag1">
+		<div class="window" id="drag1" style="%s">
 			<p class="label tgreen">Обучение<label class="trayb tred" data-title="Закрыть" onClick="CloseWin(\'#drag1\');">[X]</label></p>
 			<div class="content noselect">
 				<div class="page" id="page1">
@@ -91,6 +93,6 @@
 				</div>
 			</div>
  		</div>
- 	', $username);
+ 	', $display, $username);
 
 ?>
