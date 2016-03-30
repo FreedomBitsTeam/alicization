@@ -3,15 +3,15 @@
 	return true;
 }
 
-function CloseEdu() {
-	$("#drag1").css("display", "none");
-	$("#helpb").css("display", "block");
+function CloseWin(win) {
+	$(win).css("display", "none");
+	$(win+"t").css("display", "block");
 	return 0;
 }
 
-function OpenEdu() {
-	$("#drag1").css("display", "block");
-	$("#helpb").css("display", "none");
+function OpenWin(win) {
+	$(win).css("display", "block");
+	$(win+"t").css("display", "none");
 	return 0;
 }
 
@@ -30,7 +30,7 @@ function PreProcCom(cmd) {
 		case "help":
 		case "info":
 			$('#data').val('');
-			OpenEdu();
+			OpenWin("#drag1");
 			break;
 		default:
 			return false;

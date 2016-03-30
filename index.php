@@ -1,4 +1,14 @@
-﻿<?php @session_start(); include("etc/config.php"); ?>
+﻿<?php 
+	@session_start(); 
+	include("etc/config.php"); 
+	if (isset($_GET['logout']) && isset($_SESSION['name']))
+	{
+		unset($_SESSION['name']);	
+		unset($_SESSION['email']);	
+		header ('Location: ../alicization/');
+		exit();
+	}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
@@ -28,7 +38,7 @@
 			
 			<div class="chat">
 				<div class="window">
-					<div class="label">Чат с Алисой<label id="helpb" onClick="OpenEdu();">[?]</label></div>
+					<div class="label">Чат с Алисой <?php require_once("php/tray.php"); ?></div>
 					<div class="content">
 						<div id="messages" class="messages">
 							

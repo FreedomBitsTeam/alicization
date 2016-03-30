@@ -14,6 +14,7 @@
 												 $DB["user"], 
 												 $DB["pswd"], 
 												 $DB["dbnm"] );
+		$mysqli->query("SET NAMES 'utf8'");
 		return $mysqli;
 	}
 	//--------------------------------------------------------

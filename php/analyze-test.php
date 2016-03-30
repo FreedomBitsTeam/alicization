@@ -2,8 +2,6 @@
 	if (isset($_GET['cmd'])) {
     include('packcage.php');
     $db = ConnectDB();
-    $db->select_db("alicization");
-    $db->query("SET NAMES 'utf8'");
     $_GET['cmd'] = rawurldecode($_GET['cmd']);
     $words  = explode(" ", mb_convert_case(trim(preg_replace("/[^0-9A-ZА-ЯЁ\s{2,}]+/ui"," ",(string)$_GET['cmd'])), MB_CASE_LOWER, "utf8"));
     $allcmd = "";

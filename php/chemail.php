@@ -13,7 +13,6 @@
     // Нулевая серия запросов 																	 [предустановки]
     //==========================================================================
     $db = ConnectDB();
-    $db->query("SET NAMES 'utf8'");
     //==========================================================================
     // Ищем в базе полученный e-mail																		 [Поиск]
     //==========================================================================
@@ -27,7 +26,7 @@
     		@session_start();
     		$_SESSION['name'] = $row['name'];
     		$_SESSION['email'] = $row['email'];
-    		echo "<br>Ваше имя:<br>".$row['name']."<br><br><br>";
+    		echo '<br>Ваше имя:<br>'.$row['name'].'<br><br><br>';
     		echo '<input id="sucstep" class="bigbtn" type="button" value="Go" OnClick="ClickNext(this);">';
     	} else {
     		printf('<br><br>Введи свое имя:<br><br>
