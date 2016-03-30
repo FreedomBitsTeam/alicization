@@ -1,6 +1,7 @@
 ﻿<?php
 
 	$username = "тестировщик";
+	if (isset($_COOKIE['name'])) $username = $_COOKIE['name'];
 	if (isset($_SESSION['name'])) $username = $_SESSION['name'];
 	printf('
 		<div class="window" id="drag1">

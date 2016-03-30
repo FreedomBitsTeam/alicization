@@ -19,8 +19,10 @@
 						input.val('');
 						results.append('<div class="my msg">'+command+'<div class="msg-right"></div></div>');	
     	    	container[0].scrollTop = container[0].scrollHeight;
+    				ReachGoal('SendRequest');
 					},
 					success: function(html) { // запустится после получения результатов
+						ReachGoal('GetAnswer');
 						results.append(html);
     	    	container[0].scrollTop = container[0].scrollHeight;
 					}

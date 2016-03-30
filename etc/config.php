@@ -8,13 +8,24 @@
 	$DB['dbnm'] = 'alicization';   // database name, default: alicization
 	
 	$SYSTEM['name']    = 'Beta';   // system version name
-	$SYSTEM['version'] = '0.5.5';  // system version number
+	$SYSTEM['version'] = '0.5.6';  // system version number
 	$SYSTEM['postfix'] = 'S-LTS';  // system assembly code
 	
-	$SYSTEM['debug']   =  false;   // system debugging On/Off
-	$SYSTEM['extlib']  =  true;    // load libraries from the external point
+	$SYSTEM['autht']   = true;     // require login On/Off
+	$SYSTEM['debug']   = false;    // system debugging On/Off
+	$SYSTEM['extlib']  = true;     // load libraries from the external point On/Off
+	$SYSTEM['savedat'] = true;     // save users requests On/Off
+	
+	$SYSTEM['metrika'] = true;     // yandex metrika On/Off
+	$SYSTEM['mwidget'] = true;     // yandex metrika widget On/Off
+	
+	$SYSTEM['v-chars']   = "/[^0-9A-ZА-ЯЁ,.()\"'\+\/\-!?\=]+/ui"; // valid chars for requests
+	
+	//==========================================================================================================
 	
 	$PATH_TO['doit'] = '../mod/';  // path to DOIT directory
+	
+	//==========================================================================================================
 	
 	$PATH_TO['jq'][0] = 'lib/jquery.min.js';
 	$PATH_TO['jq'][1] = 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js';
@@ -50,6 +61,9 @@
 	$QUERY[4][1] = "INSERT INTO emails (`email`, `name`, `points`) VALUES ('";
 	$QUERY[4][2] = "', '";
 	$QUERY[4][3] = "', '0')";
+	
+	$QUERY[5][1] = "INSERT INTO `requests` (`id`, `user`, `text`, `num`, `com`, `success`, `system`, `time`) VALUES (NULL, '";
+	$QUERY[5][2] = "', CURRENT_TIMESTAMP)";
 	
 	//==========================================================================================================
 	

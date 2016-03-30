@@ -4,6 +4,8 @@
 	if (isset($_GET['logout']) && isset($_SESSION['name'])) {
 		unset($_SESSION['name']);	
 		unset($_SESSION['email']);	
+		setcookie("name", NULL, time()-10, '/', $_SERVER['SERVER_NAME']);
+    setcookie("email", NULL, time()-10, '/', $_SERVER['SERVER_NAME']);
 		header ('Location: ../alicization/');
 		exit();
 	}
@@ -39,7 +41,9 @@
 			<div class="chat">
 				<div class="window">
 					<div class="label">
-						Чат с Алисой <?php require_once("php/tray.php"); ?>
+						Чат с Алисой 
+						<?php if ($SYSTEM['metrika']) require_once("php/metrika.php"); ?>
+						<?php require_once("php/tray.php"); ?>
 					</div>
 					<div class="content">
 						<div id="messages" class="messages">
@@ -54,7 +58,7 @@
 			</div>
 			
 		</div>
-		<?php require_once("php/beta.php"); ?>
+		<?php if ($SYSTEM['autht']) require_once("php/beta.php"); ?>
 		<div class="vinfo"><?php echo $SYSTEM['version']." on ".PHP_OS;?></div>
 	</body>
 </html>

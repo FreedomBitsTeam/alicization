@@ -1,4 +1,14 @@
 ﻿var page = 1;
+var MetrikaON = false;
+
+function ReachGoal(aim) {
+	if (window.MetrikaON) {
+		yaCounter36214560.reachGoal(aim);
+	} else {
+		console.log('Reach goal. Counter off. Goal id: ' + aim);
+	}
+	return true;
+}
 
 function ElemRemove() {
 	$("#wrem").html('');
@@ -41,6 +51,7 @@ function PreProcCom(cmd) {
 		case "clear":
 			clear($("#results"));
 			$('#data').val('');
+			ReachGoal('ClearDlg');
 			break;
 		case "помощь":
 		case "помоги":

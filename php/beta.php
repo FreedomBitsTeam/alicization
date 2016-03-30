@@ -1,6 +1,6 @@
 ﻿<?php
 
-if (!isset($_SESSION['name'])) {
+if (!isset($_SESSION['name']) && (!isset($_COOKIE['name']) || !isset($_COOKIE['email']))) {
 	printf('
 		<div id="overlay">
 			<div class="showmessage" id="betain">
@@ -40,6 +40,10 @@ if (!isset($_SESSION['name'])) {
 		</div>
 	', "%username%");
 } else {
+	if (isset($_COOKIE['name']) && isset($_COOKIE['email']) && (!isset($_SESSION['name']))) {
+		$_SESSION['name'] = $_COOKIE['name'];
+    $_SESSION['email'] = $_COOKIE['email'];
+	}
 	printf('
 		<div id="overlay">
 			<div class="showmessage">

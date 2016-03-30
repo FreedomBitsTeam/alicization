@@ -21,16 +21,18 @@
     // Преобразуем вводимую строку, удаляем опасные символы
     //--------------------------------------------------------------------------
     $words = explode(" ", mb_convert_case(trim(preg_replace(
-           "/[^0-9A-ZА-ЯЁ\s{2,}]+/ui"," ",$_GET['cmd'])),MB_CASE_LOWER,"utf8"));
+             "/[^A-ZА-ЯЁ]+/ui","",$_GET['cmd'])),MB_CASE_LOWER,"utf8"));
     //--------------------------------------------------------------------------
     $allcmd = "";
     $allnum = "";
     for ($i = 0; $i < count($words); $i++) {
-    	$sql = $QUERY[1][1] .$words[$i]. $QUERY[1][2] .$words[$i]. $QUERY[1][3];
-    	$res = $db->query($sql);
-    	$row = mysqli_fetch_array($res);
-    	$allcmd .= $row['word'].' ';
-    	$allnum .= $row['type'].';';
+      if ($words[$i] != "" && $words[$i] != " " && $words[$i] != "  ") {
+    		$sql = $QUERY[1][1] .$words[$i]. $QUERY[1][2] .$words[$i]. $QUERY[1][3];
+    		$res = $db->query($sql);
+    		$row = mysqli_fetch_array($res);
+    		$allcmd .= $row['word'].' ';
+    		$allnum .= $row['type'].';';
+    	}
     } 
     //==========================================================================
     // Вторая серия запросов																					[отвечаем]
@@ -43,6 +45,20 @@
     	if (@include($PATH_TO['doit'].$row['doit'])) {					 // Подключаем
     		$answer .= " ".@Module($allnum, (string)$_GET['cmd']); // Выполняем
     	}
+    }        
+    //==========================================================================
+    // Сохраняем телеметрию
+    //==========================================================================
+    if ($SYSTEM['savedat'] && strlen($_GET['cmd']) > 3) {
+    	$userlogin = "anon"; $succ = 0;
+    	if (isset($_SESSION['name'])) $userlogin = $_SESSION['name'];
+    	if (strlen($row['answer']) > 2) $succ = 1;
+    	$syst = $_SERVER["HTTP_USER_AGENT"];
+    	$_GET['cmd'] = mb_convert_case(trim(preg_replace(
+                   $SYSTEM['v-chars']," ",$_GET['cmd'])),MB_CASE_LOWER,"utf8");
+    	$sql = $QUERY[5][1].$userlogin."', '".$_GET['cmd']."', '".$allnum."', '".
+    	       $row['id']."', '".$succ."', '".$syst.$QUERY[5][2];
+    	$db->query($sql);
     }
     //==========================================================================
     // Выводим результаты

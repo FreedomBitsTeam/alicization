@@ -92,16 +92,19 @@
 }
 @media screen and (max-width: 980px) {
 	#drag1 {
-		left: calc(100% - 420px);
+		left: calc(100% - 450px);
 		top: 5px;
-		height: 400px;
-		width: 420px;
+		height: 500px;
+		width: 450px;
 	}
 	#drag1 .content {
 		overflow-y: scroll;
 		font-size: 28px;
 	}
 	.next_page {
-		font-size: 28px;
+		font-size: 32px;
+	}
+	.last_page {
+		font-size: 32px;
 	}
 }
