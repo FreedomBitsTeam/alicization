@@ -1,4 +1,11 @@
-﻿<?php
+﻿<?php @session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<?php
 	if (isset($_GET['cmd'])) {
     //==========================================================================
     include('packcage.php');
@@ -28,15 +35,21 @@
     $res = $db->query($sql);
     $row = mysqli_fetch_array($res);
     $answer = $row['answer'];
-    if (@include("../mod/".$row['doit'])) {
-    	$answer .= " ".@Module($allnum, (string)$_GET['cmd']);
+    if ($row['doit'] != "null") {
+    	if (@include("../mod/".$row['doit'])) {
+    		$answer .= " ".@Module($allnum, (string)$_GET['cmd']);
+    	}
     }
     //==========================================================================
     // Выводим результаты
     //==========================================================================
+    if (isset($_SESSION['name'])) $answer = str_replace("пользователь",$_SESSION['name'],$answer); 
     if (strlen($row['answer']) > 2)
     	echo '<br><br><br><div class="sys msg">"' . substr($allcmd, 0, strlen($allcmd)-1) . '"<br>' . $answer . '<div class="msg-left"></div></div><br><br><br><br>';
     else
     	echo '<br><br><br><div class="sys msg">"' . substr($allcmd, 0, strlen($allcmd)-1) . '"<br>' . 'К сожалению, я пока не знаю, что ответить на это' . '<div class="msg-left"></div></div><br><br><br><br>';
 	}
 ?>
+
+</body>	
+</html>

@@ -18,7 +18,9 @@
    }
 	
 	function Module($num, $cmd) {
-		return matheval($cmd);
+		$x = matheval($cmd);
+		if ($x) return $x;
+		else return "Некорректное выражение";
 	}
 	
 ?>

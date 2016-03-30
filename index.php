@@ -1,4 +1,4 @@
-﻿<?php include("etc/config.php"); ?>
+﻿<?php @session_start(); include("etc/config.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
@@ -6,11 +6,30 @@
 		<title><?php @printf($SYSTEM['name']." ".$SYSTEM['version']); ?></title>
 		<link rel="icon" type="image/x-icon" href="img/ico/chat/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/beta.css">
+		<link rel="stylesheet" type="text/css" href="css/colors.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>-->
+		<script type="text/javascript" src="js/beta.js"></script>
+		<!--<script type="text/javascript" src="js/drag-and-drop.js"></script>-->
 		<script type="text/javascript" src="js/interface.js"></script>
 		<script type="text/javascript" src="js/request.js"></script>
 	</head>	
 	<body>
+		
+		<!--
+		<div class="window" id="drag1">
+			<p class="label tgreen">Обучение</p>
+			<div class="content" style="">
+				<p class="tred">Привет, тестировщик!</p>
+				<br>
+				<p class="torange">Как тебе панелька? А ее можно перетаскивать!</p>
+				<br>
+				<p class="tblue">Попробуй перетащить ее за заголовок</p>
+			</div>
+ 		</div>
+ 		-->
 		
 		<div class="logo"></div>
 		
@@ -36,6 +55,10 @@
 			</div>
 			
 		</div>
+		
+		<?php require_once("php/beta.php"); ?>
+		
+		<div class="vinfo"><?php echo $SYSTEM['version'];?></div>
 		
 	</body>
 </html>

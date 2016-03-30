@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 12 2016 г., 21:51
+-- Время создания: Фев 23 2016 г., 15:31
 -- Версия сервера: 5.6.16
 -- Версия PHP: 5.5.11
 
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `commands` (
   `doit` varchar(255) COLLATE utf8_bin NOT NULL,
   `answer` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `commands`
@@ -152,9 +152,37 @@ INSERT INTO `commands` (`id`, `keywords`, `doit`, `answer`) VALUES
 (2, '0;4;88;', 'null', 'Все хорошо, сервер исправен'),
 (3, '0;4;89;', 'version.php', 'Моя последняя версия:'),
 (4, '1;2;', 'null', 'Привет, пользователь! Чем могу помочь?'),
-(5, '0;2;4;', 'null', 'Все хорошо! Сервер в полном порядке!'),
-(6, '16;75;', 'schedule.php', 'Ваше расписание:'),
-(7, '700;', 'math.php', 'Ответ:');
+(5, '0;2;4;', 'la.php', 'Загруженность сервера на данный момент:'),
+(6, '16;75;0;', 'schedule.php', 'Ваше расписание:'),
+(7, '700;', 'highmath.php', 'Ответ:'),
+(8, '16;', 'schedule.php', 'Ваше расписание:');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `emails`
+--
+
+DROP TABLE IF EXISTS `emails`;
+CREATE TABLE IF NOT EXISTS `emails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `points` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`, `name`, `points`) VALUES
+(1, 'snipghost@list.ru', 'SnipGhost', 5),
+(2, 'example@example.com', 'Guest', 0),
+(3, 'ihikaru@inbox.ru', 'Hikaru', 0),
+(4, 'sharai.nastia@yandex.ru', 'Nastya', 0),
+(5, '', 'Гость', 0),
+(6, 'BlaBLa', 'Hikaru', 0);
 
 -- --------------------------------------------------------
 

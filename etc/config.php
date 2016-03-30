@@ -5,7 +5,7 @@
 	$DB["pswd"] = "qwerty"; 			// password for user, default: qwerty
 	$DB["dbnm"] = "alicization"; 	// database name, default: alicization
 	
-	$SYSTEM["name"]    = "Alpha"; // system version name
-	$SYSTEM["version"] = "0.4.3"; // system version number
+	$SYSTEM["name"]    = "Beta";  // system version name
+	$SYSTEM["version"] = "0.5.1"; // system version number
 	
 ?>

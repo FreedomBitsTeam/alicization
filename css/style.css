@@ -4,7 +4,8 @@
 }
 body {
 	overflow-x: hidden;
-	//overflow-y: hidden;
+	overflow-y: hidden;
+	height: 100vh;
 }
 .logo {
 	width: 141px;
@@ -53,22 +54,21 @@ body {
 	font-family: Comic Sans MS;
 }
 .label {
-	width: calc(100% - 20px);
 	height: 40px;
 	border-radius: 20px 20px 0 0;
 	background-color: #0076BA;
 	border: 2px solid #0076BA;
-	padding: 10px 0 0 20px;
+	padding: 10px 20px 0 20px;
 	font-size: 25px;
 	color: white;
 }
 .content {
 	position: relative;
-	width: 100%;
-	height: calc(100% - 40px);
+	height: calc(100% - 58px);
 	border-radius: 0 0 20px 20px;
 	background-color: #fff;
 	border: 2px solid #0076BA;
+	font-size: 18px;
 }
 .messages {
 	width: 96%;
@@ -153,11 +153,17 @@ body {
 	margin-bottom: 20px;
 	background-color: #8dd
 }
+.vinfo {
+	position: absolute;
+	font-family: Courier New;
+	bottom: 30px;
+	left: 30px;
+}
 @media screen and (max-width: 980px) {
 	.container {
 		height: 75vh;
 		margin: 0;
-		margin-top: 25vh;
+		margin-top: calc(25vh - 20px);
 	}
 	.alice {
 		position: absolute;
@@ -179,14 +185,14 @@ body {
 		height: 70px;
 	}
 	.content {
-		max-height: calc(75vh - 100px);
+		max-height: calc(75vh - 80px);
 		border: 0;
 	}
 	.messages {
 		margin-bottom: calc(1% + 100px);
 		font-size: 30px;
 	}
-	.data-input {
+	data-input {
 		padding: 0;
 	}
 	.data-input input {
@@ -207,5 +213,8 @@ body {
   	border-left: 60px solid transparent;
   	border-right: 20px solid transparent;       
   	border-top: 30px solid #ccc;
+	}
+	.vinfo {
+		display: none;
 	}
 }
