@@ -17,14 +17,14 @@
 		<link rel="icon" type="image/x-icon" href="img/ico/chat/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/beta.css">
+		<link rel="stylesheet" type="text/css" href="css/education.css">
 		<link rel="stylesheet" type="text/css" href="css/colors.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="js/beta.js"></script>
-		<script type="text/javascript" src="js/drag-and-drop.js"></script>
 		<script type="text/javascript" src="js/interface.js"></script>
 		<script type="text/javascript" src="js/request.js"></script>
+		<script type="text/javascript" src="js/beta.js"></script>
 	</head>	
 	<body>
 		

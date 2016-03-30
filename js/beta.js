@@ -5,7 +5,7 @@ function ClickNext(obj) {
 		var command = $("#email").val();
 		if (command == "") { $("#error1").text("Хммм, поле же пустое!"); return 0; }
 		var request = 'cmd=' + encodeURIComponent(command);
-		var results = $("#st2");
+		var results = $("#st2");		
 		$.ajax({
 			type: "GET",
 			url: "php/chemail.php",
@@ -15,6 +15,7 @@ function ClickNext(obj) {
 			},
 			success: function(html) {
 				results.append(html);
+				if ($('#usernameget').text() != "") $('#usercaption').text($('#usernameget').text()+"!");
 			}
 		});
 	}
@@ -33,6 +34,7 @@ function ClickNext(obj) {
 			},
 			success: function(html) {
 				results.append(html);
+				$('#usercaption').text(uname+"!");
 			}
 		});
 	}

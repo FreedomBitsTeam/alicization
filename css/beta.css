@@ -60,58 +60,6 @@
 #st3 {
 	display: none;
 }
-#drag1 {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	z-index: 9;
-	left: 10%;
-	top: 40%;
-	color: #70BF53;
-	box-shadow: 0 0 10px rgba(0,0,0,0.6);
-	font-family: Courier;
-}
-#drag1 .label {
-	border: 2px solid;
-	background: #14171A; 
-	border-color: #1D4F73;
-	border-radius: 15px 15px 0 0;
-	font-weight: bold;
-}
-#drag1 .content {
-	border: 2px solid;
-	background: #14171A; 
-	border-color: #1D4F73;
-	padding: 20px;	
-	border-top: 0px;
-	border-radius: 0 0 5px 5px;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	height: calc(100% - 96px);
-}
-.trayb {
-	float: right;
-	cursor: pointer;
-	font-family: Courier;
-	font-weight: bold;
-}
-.trayb:hover::after {
-	content: attr(data-title);
-	position: absolute;
-	margin-left: -70px;
-	margin-top: 30px;
-	z-index: 1;
-	background: rgba(255,255,255,1);
-	font-family: Arial, sans-serif;
-	font-size: 18px;
-	padding: 5px 10px;
-	color: #0076BA;
-	border: 2px solid #0076BA;
-	border-radius: 5px;
-}
-#drag1t {
-	display: none;
-}
 @media screen and (max-width: 980px) {
 	.showmessage {
 		width: 60vw;
@@ -132,17 +80,5 @@
 		border: 2px dashed #0076BA;
 		padding: 10px;
 		font-size: 30px;
-	}
-	#drag1 {
-		left: calc(100% - 420px);
-		top: 5px;
-		height: 400px;
-		width: 420px;
-	}
-	#drag1 .content {
-		overflow-y: scroll;
-	}
-	.trayb:hover::after {
-		display: none;
 	}
 }

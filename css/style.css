@@ -7,6 +7,15 @@ body {
 	overflow-y: hidden;
 	height: 100vh;
 }
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
 .logo {
 	width: 141px;
 	height: 141px;
@@ -161,6 +170,26 @@ body {
 	bottom: 30px;
 	left: 30px;
 }
+.trayb {
+	float: right;
+	cursor: pointer;
+	font-family: Courier;
+	font-weight: bold;
+}
+.trayb:hover::after {
+	content: attr(data-title);
+	position: absolute;
+	margin-left: -70px;
+	margin-top: 30px;
+	z-index: 1;
+	background: rgba(255,255,255,1);
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	padding: 5px 10px;
+	color: #0076BA;
+	border: 2px solid #0076BA;
+	border-radius: 5px;
+}
 @media screen and (max-width: 980px) {
 	.container {
 		height: 75vh;
@@ -217,6 +246,9 @@ body {
   	border-top: 30px solid #ccc;
 	}
 	.vinfo {
+		display: none;
+	}
+	.trayb:hover::after {
 		display: none;
 	}
 }

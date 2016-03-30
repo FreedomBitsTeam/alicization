@@ -1,4 +1,18 @@
-﻿function clear(obj) {
+﻿var page = 1;
+
+function NextPage() {
+	$("#page"+page.toString()).css("display", "none");
+	page++;
+	$("#page"+page.toString()).css("display", "block");
+}
+
+function LastPage() {
+	$("#page"+page.toString()).css("display", "none");
+	page--;
+	$("#page"+page.toString()).css("display", "block");
+}
+
+function clear(obj) {
 	obj.html('');
 	return true;
 }
@@ -37,3 +51,13 @@ function PreProcCom(cmd) {
 	}
 	return true;
 }
+
+$(document).ready(function() {
+	$("#drag1").draggable({ 
+		handle: '.label', 
+		cursor: 'move',
+		snap: '.window',
+		snapTolerance: 30,
+		containment: "body"
+	});
+});
