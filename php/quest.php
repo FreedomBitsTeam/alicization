@@ -51,13 +51,13 @@
 				<div class="page" id="page6">
 					<p class="torange">На данный момент в ней всего несколько тестовых модулей, и она знает очень мало слов.</p>
 					<br>
-					<p class="tblue">Сейчас доступны модули:<br><span class="tred">приветствие</span>, <span class="tred">расписание</span> и <span class="tred">математический модуль</span>.</p>
+					<p class="tblue">Сейчас доступны <span class="tred">4</span> модуля</p>
 					<br><br>
 					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">
 					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
 				</div>
 				<div class="page" id="page7">
-					<p class="tgreen">Приветствие</p>
+					<p class="tgreen">Модуль приветствия</p>
 					<br>
 					<p class="tblue">Вы можете поздороваться с Алиской короткой командой <span class="tred">"привет, Алиса"</span> или же просто <span class="tred">"привет"</span>, но Алиса любит, когда обращаются к ней ласково :)</p>
 					<br><br>
@@ -65,9 +65,9 @@
 					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
 				</div>
 				<div class="page" id="page8">
-					<p class="tgreen">Расписание</p>
+					<p class="tgreen">Модуль расписания</p>
 					<br>
-					<p class="tblue">Вы можете спросить у Алисы расписание командой <span class="tred">"Скажи расписание 11 Ф"</span> или <span class="tred">"Расписание 11ф"</span>, но расписание пока доступно только для 11 Ф класса.</p>
+					<p class="tblue">Вы можете спросить у Алисы расписание командой <span class="tred">"Скажи расписание 11 А на завтра"</span> или <span class="tred">"Расписание 11а на среду"</span>, но расписание пока доступно только для 11 А класса.</p>
 					<br><br>
 					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">
 					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
@@ -81,12 +81,28 @@
 					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
 				</div>
 				<div class="page" id="page10">
-					<p class="torange">Также вы можете посетить страницу нашего тестового анализатора вводимых слов и посмотреть, как Алиса распознает слова. Для этого нажмите на кнопочку <span class="tgreen">[T]</span> на основной форме.</p>
+					<p class="tgreen">Модуль погоды</p>
+					<br>
+					<p class="tblue">Вы можете спросить у Алисы прогноз погоды на ближайшие дни командой <span class="tred">"Скажи погоду"</span> или просто <span class="tred">"Погода"</span>.</p>
 					<br><br>
 					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">
 					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
 				</div>
 				<div class="page" id="page11">
+					<p class="tgreen">Препроцессор</p>
+					<br>
+					<p class="tblue">Вы можете очистить диалог командой <span class="tred">"очисти"</span> или <span class="tred">"clear"</span>, а также вывести это окошко обучения командой <span class="tred">"инфо"</span>.</p>
+					<br><br>
+					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">
+					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
+				</div>
+				<div class="page" id="page12">
+					<p class="torange">Также вы можете посетить страницу нашего тестового анализатора вводимых слов и посмотреть, как Алиса распознает слова. Для этого нажмите на кнопочку <span class="tgreen">[T]</span> на основной форме.</p>
+					<br><br>
+					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">
+					<input class="trig_page next_page" type="button" value=">>" onClick="NextPage();">
+				</div>
+				<div class="page" id="page13">
 					<p class="tblue">На данный момент это все, что есть в бета-версии, но наши разработчики уже готовят внедрение новых функций! Узнайте больше о проекте <span class="tgreen">Алисизация</span> на:<br><br><a href="http://alicization.tk/" target="_blank"><center><span class="tred" style="text-decoration: underline;">сайте проекта</span></center></a></p>
 					<br><br>
 					<input class="trig_page last_page" type="button" value="<<" onClick="LastPage();">

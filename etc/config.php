@@ -10,7 +10,7 @@
 	//==========================================================================================================
 	
 	$SYSTEM['name']    = 'Beta';   // system version name
-	$SYSTEM['version'] = '0.5.7';  // system version number
+	$SYSTEM['version'] = '0.5.8';  // system version number
 	$SYSTEM['postfix'] = 'U-LTS';  // system assembly code
 	
 	$SYSTEM['autht']   = true;     // require login On/Off
@@ -27,7 +27,10 @@
 	
 	//==========================================================================================================
 	
-	$SYSTEM['v-chars'] = "/[^0-9A-ZА-ЯЁ,.()\"'\+\/\-!?\=]+/ui"; // valid chars for requests
+	$SYSTEM['schedule'] = 1;       // schedule detail levels (1 - min, 3 - max)
+	$SYSTEM['birthday'] = '2015-07-24'; // system birthday date (format: yyyy-mm-dd)
+	
+	$SYSTEM['v-chars']  = "/[^0-9A-ZА-ЯЁ,.()\"'\+\/\-!?\=]+/ui"; // valid chars for requests
 	
 	//==========================================================================================================
 	

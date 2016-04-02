@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 28 2016 г., 12:36
+-- Время создания: Апр 02 2016 г., 15:25
 -- Версия сервера: 5.6.16
 -- Версия PHP: 5.5.11
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `keywords` (
   `type` int(11) NOT NULL,
   `word` varchar(63) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=105 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=117 ;
 
 --
 -- Дамп данных таблицы `keywords`
@@ -141,9 +141,19 @@ INSERT INTO `keywords` (`id`, `type`, `word`) VALUES
 (101, 33, 'телефончик'),
 (102, 33, 'телеф'),
 (103, 5, 'новенькое'),
-(104, 5, 'новое');
-
--- Всего: 36 разделов (0..35)
+(104, 5, 'новое'),
+(105, 1, 'тебе'),
+(106, 36, 'лет'),
+(107, 37, 'слава'),
+(108, 38, 'украина'),
+(109, 39, 'знаешь'),
+(110, 40, 'ф'),
+(111, 0, 'пока'),
+(112, 41, 'понедельник'),
+(113, 42, 'вторник'),
+(114, 43, 'среда'),
+(115, 44, 'четверг'),
+(116, 45, 'пятница');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

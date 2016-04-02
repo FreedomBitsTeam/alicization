@@ -31,10 +31,13 @@
     		$sql = $QUERY[1][1] .$words[$i]. $QUERY[1][2] .$words[$i]. $QUERY[1][3];
     		$res = $db->query($sql);
     		$row = mysqli_fetch_array($res);
-    		$allcmd .= $row['word'].' ';
-    		$allnum .= $row['type'].';';
+    		if ($row['type'] != '0') {
+    			$allcmd .= $row['word'].' ';
+    			$allnum .= $row['type'].';';
+    		}
     	}
     } 
+    if ($allnum == "") $allnum = "0;";
     //==========================================================================
     // Вторая серия запросов																					[отвечаем]
     //==========================================================================
@@ -77,12 +80,12 @@
     	echo $answer;
     else
     	echo $MESSAGE['answer'] . $MESSAGE['typein'];
-    echo '<div class="msg-left"></div></div><br><br><br><br>';
+    echo '<div class="msg-left"></div></div><div style="clear: both;"><br>';
     //==========================================================================
 	} else {
 		include('packcage.php');
 		echo '<br><br><br><div class="sys msg">' . $MESSAGE['badreq'];
-		echo '<div class="msg-left"></div></div><br><br><br><br>';
+		echo '<div class="msg-left"></div></div><div style="clear: both;"><br>';
 	}
 ?>
 

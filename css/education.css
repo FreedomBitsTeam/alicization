@@ -90,6 +90,12 @@
 #page11 {
 	display: none;
 }
+#page12 {
+	display: none;
+}
+#page13 {
+	display: none;
+}
 @media screen and (max-width: 980px) {
 	#drag1 {
 		left: calc(100% - 450px);
