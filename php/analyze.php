@@ -75,17 +75,17 @@
     	$notion = $MESSAGE['debug'];
     	$notion .= ' "' . substr($allcmd, 0, strlen($allcmd)-1) . '"<br>'; 
     }
-    echo '<br><br><br><div class="sys msg">' . $notion;
+    echo '<div class="sys msg">' . $notion;
     if (strlen($row['answer']) > 2)
     	echo $answer;
     else
     	echo $MESSAGE['answer'] . $MESSAGE['typein'];
-    echo '<div class="msg-left"></div></div><div style="clear: both;"><br>';
+    echo '<div class="msg-left"></div></div><div style="clear: both;">';
     //==========================================================================
 	} else {
 		include('packcage.php');
-		echo '<br><br><br><div class="sys msg">' . $MESSAGE['badreq'];
-		echo '<div class="msg-left"></div></div><div style="clear: both;"><br>';
+		echo '<div class="sys msg">' . $MESSAGE['badreq'];
+		echo '<div class="msg-left"></div></div><div style="clear: both;">';
 	}
 ?>
 

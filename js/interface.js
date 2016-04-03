@@ -58,6 +58,7 @@ function PreProcCom(cmd) {
 		case "инфо":
 		case "help":
 		case "info":
+		case "?":
 			$('#data').val('');
 			OpenWin("#drag1");
 			break;

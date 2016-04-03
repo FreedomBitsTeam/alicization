@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 02 2016 г., 15:24
+-- Время создания: Апр 03 2016 г., 14:23
 -- Версия сервера: 5.6.16
 -- Версия PHP: 5.5.11
 
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `commands` (
   `doit` varchar(255) COLLATE utf8_bin NOT NULL,
   `answer` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=28 ;
 
 --
 -- Дамп данных таблицы `commands`
@@ -172,7 +172,8 @@ INSERT INTO `commands` (`id`, `keywords`, `doit`, `answer`) VALUES
 (23, '1;0;', 'null', 'Хммм ...'),
 (24, '0;', 'null', 'Хммм ...'),
 (25, '37;38;', 'null', 'Слава<br>Союзу Советских Социалистических Республик!'),
-(26, '28;1;', 'bith.php', 'Это секрет.<br>Но тебе скажу, только никому не говори!');
+(26, '28;1;', 'bith.php', 'Это секрет.<br>Но тебе скажу, только никому не говори!'),
+(27, '3;46;', 'backup.php', 'Делаю резервную копию ...');
 
 -- --------------------------------------------------------
 
@@ -211,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `keywords` (
   `type` int(11) NOT NULL,
   `word` varchar(63) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=117 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=119 ;
 
 --
 -- Дамп данных таблицы `keywords`
@@ -332,7 +333,9 @@ INSERT INTO `keywords` (`id`, `type`, `word`) VALUES
 (113, 42, 'вторник'),
 (114, 43, 'среда'),
 (115, 44, 'четверг'),
-(116, 45, 'пятница');
+(116, 45, 'пятница'),
+(117, 46, 'бекап'),
+(118, 46, 'слепок');
 
 -- --------------------------------------------------------
 
@@ -385,14 +388,7 @@ CREATE TABLE IF NOT EXISTS `requests` (
   `system` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
-
---
--- Дамп данных таблицы `requests`
---
-
-INSERT INTO `requests` (`id`, `user`, `text`, `num`, `com`, `success`, `system`, `time`) VALUES
-(1, 'SnipGhost', 'привет, алиска!', '2;1;', '4', 1, 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0', '2016-04-02 13:23:44');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -407,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `part` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `rooms`
