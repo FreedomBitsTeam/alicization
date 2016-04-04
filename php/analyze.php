@@ -7,7 +7,8 @@
 <body>
 <?php
   if (!isset($_GET['cmd'])) $_GET['cmd'] = "N";
-	if (mb_strlen($_GET['cmd']) >= 3 && mb_strlen($_GET['cmd']) <= 50) {
+  $mbstrlen = mb_strlen($_GET['cmd'], "utf-8");
+	if ($mbstrlen >= 3 && $mbstrlen <= 50) {
     //==========================================================================
     include('packcage.php');
     //==========================================================================
@@ -85,6 +86,7 @@
 	} else {
 		include('packcage.php');
 		echo '<div class="sys msg">' . $MESSAGE['badreq'];
+		echo '<br>В запросе: ' . $mbstrlen . '<br>';
 		echo '<div class="msg-left"></div></div><div style="clear: both;">';
 	}
 ?>

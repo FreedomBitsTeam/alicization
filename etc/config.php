@@ -10,7 +10,7 @@
 	//==========================================================================================================
 	
 	$SYSTEM['name']    = 'Alice';  // system version name
-	$SYSTEM['version'] = '0.6.0';  // system version number
+	$SYSTEM['version'] = '0.6.1';  // system version number
 	$SYSTEM['postfix'] = 'S-MPS';  // system assembly code
 	
 	$SYSTEM['autht']   = true;     // require login On/Off
